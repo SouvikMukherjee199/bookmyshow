@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from "react-router-dom";
+import DefaultHOC from "./HOC/Default.HOC";
+//import Temp from "./components/Temp";
+import NavSm from "./components/Navbar/navbar.component.js";
 
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";//imported thw react-slick css here as app.js is the global file where all the components have got rendered 
+import HomePage from "./pages/Home.page.js";
+import MovieHOC from "./HOC/Movie.HOC.js";
+import Movie from "./pages/Movie.page.js";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route
+          path="/*"
+          element={<DefaultHOC />}
+        />
+        <Route
+          path="/*"
+          element={<HomePage />}
+        />
+
+        <Route path="/movie/:id" element={<MovieHOC/>}/>
+        <Route path="/movie/:id" element={<Movie/>}/> 
+        {/* Here the :id is the parameter or params that we learnt about during dealing with API */}
+      </Routes>
+      <h1 className="text-cyan-500 mx-50 ">Developed by Souvik Mukherjee</h1>
+    
+    </>
   );
 }
 
