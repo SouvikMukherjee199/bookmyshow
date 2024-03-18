@@ -27,6 +27,7 @@ function App() {
       </Routes>
       <h1 className="text-cyan-500 mx-50 ">Developed by Souvik Mukherjee</h1>
     
+    
     </>
   );
 }
