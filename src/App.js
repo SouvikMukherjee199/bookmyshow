@@ -8,22 +8,40 @@ import "slick-carousel/slick/slick-theme.css";//imported thw react-slick css her
 import HomePage from "./pages/Home.page.js";
 import MovieHOC from "./HOC/Movie.HOC.js";
 import Movie from "./pages/Movie.page.js";
+import Plays from "./pages/Plays.page.js";
+import HeroCarousal from "./components/HeroCarousal/HeroCarousal.component.js";
+import Navbar from "./components/Navbar/navbar.component.js";
 function App() {
   return (
     <>
       <Routes>
-        <Route
+       
+       <Route path="/*" element={<><DefaultHOC/></>}/>
+         
+                               {/* {/* or we write the following    */}
+        {/* <Route
           path="/*"
           element={<DefaultHOC />}
         />
         <Route
           path="/*"
           element={<HomePage />}
-        />
+        /> */}
 
+
+
+        <Route path="/movie/:id" element={<><MovieHOC/></>}/>
+                     {/* or we write the following
         <Route path="/movie/:id" element={<MovieHOC/>}/>
-        <Route path="/movie/:id" element={<Movie/>}/> 
+        <Route path="/movie/:id" element={<Movie/>}/>  */}
         {/* Here the :id is the parameter or params that we learnt about during dealing with API */}
+      
+        <Route path="/plays" element={<>
+       <Navbar />
+       <HeroCarousal />
+       <Plays />
+       </>} />
+
       </Routes>
       <h1 className="text-cyan-500 mx-50 ">Developed by Souvik Mukherjee</h1>
     
