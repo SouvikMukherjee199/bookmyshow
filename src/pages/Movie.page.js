@@ -9,7 +9,7 @@ const launchRazorPay = () =>{
 let options = {
 //careate an object called options with key-value pairs 
 key : "rzp_test_8wWHnjXlqKMbay" , //passing the Razorpay test key from the website
-amount : 500 , //or create an array of amounts or make a function to dynamically render the rupee values
+amount : 500*100 , //or create an array of amounts or make a function to dynamically render the rupee values
 currency : "INR" ,
 name : "Book My Show Clone" ,
 description : "Movie Purchase on Rental" ,
@@ -64,10 +64,10 @@ const Movie = () => {
         </div>  
        </div>
 
-       <button onClick={launchRazorPay} class=" px-4 mt-2 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+       <button onClick={launchRazorPay} className =" px-4 mt-2 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
        Book tickets
        </button>
-
+       {/*The class has worked instead of className as it is inside index.html */}
 
 
       </div>
