@@ -64,7 +64,7 @@ const Movie = () => {
         </div>  
        </div>
 
-       <button onClick={launchRazorPay} class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+       <button onClick={launchRazorPay} class=" px-4 mt-2 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
        Book tickets
        </button>
 
