@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
+import axios from "axios";
 import EntertainmentCardSlider from "../components/Entertainment/Entertainmentcard.component";
 import { Premier } from "../components/Premier/Premier.component";
 import PosterSlider from "../components/PosterSlider/PosterSlider.component";
@@ -8,6 +9,19 @@ import TempPosters from  "../config/TempPosters.config";
 
 function HomePage(){
     console.log("Home rendered");
+    const [popularMovies, setPopularMovies] = useState([]); 
+    //giving meaningful random names like popularMovies, setPopularMovies etc..
+    useEffect(()=> 
+    {
+        const requestPopularMovies = async () => {
+        const getPopularMovies = await axios.get("/movie/popular");
+        setPopularMovies(getPopularMovies.data.results);
+        };
+        requestPopularMovies();
+    }, []);
+    //We put the empty box bracket above because we want to execute the thing once
+   console.log({popularMovies});
+
 
     return (
         <>
@@ -29,7 +43,8 @@ function HomePage(){
          <div className="flex ">
             <img src="https://assets-in.bmscdn.com/discovery-catalog/collections/tr:w-1440,h-120/premiere-banner-web-collection-202208191200.png" alt="Rupay" className="w-full h-full"  />
         </div>
-         <PosterSlider images={TempPosters} title="Premiers" subtitle="Brand New Releases Every  Friday" isDark/>
+         {/* <PosterSlider images={TempPosters} title="Premiers" subtitle="Brand New Releases Every  Friday" isDark/> */}
+         <PosterSlider images={popularMovies} title="Premiers" subtitle="Brand New Releases Every  Friday" isDark/>
          </div>
          </div>
         </div>
