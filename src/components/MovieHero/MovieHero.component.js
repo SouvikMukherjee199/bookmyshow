@@ -66,6 +66,7 @@ const MovieHero = () => {
             <div style={{ backgroundColor: "#FF597B", whiteSpace: "nowrap", maxWidth: "calc(100% - 48px), " // Dynamic width calculation   
              }} className="text-white  h-10 flex items-center justify-center rounded-sm px-3 text-sm ">
             <h1 className="cursor-pointer  py-1">Book Now</h1>
+            
           </div>
           <div style={{ backgroundColor: "#FF597B", whiteSpace: "nowrap", maxWidth: "calc(100% - 48px)" // Dynamic width calculation   
              }} className="text-white py-1 cursor-pointer h-10 flex items-center justify-center rounded-sm px-3 text-sm ">

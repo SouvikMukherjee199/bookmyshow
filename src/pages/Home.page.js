@@ -22,6 +22,31 @@ function HomePage(){
     //We put the empty box bracket above because we want to execute the thing once
    console.log({popularMovies});
 
+   const [topMovies, settopMovies] = useState([]); 
+   //giving meaningful random names like popularMovies, setPopularMovies etc..
+   useEffect(()=> 
+   {
+       const requesttopMovies = async () => {
+       const gettopMovies = await axios.get("/movie/top_rated");
+       settopMovies(gettopMovies.data.results);
+       };
+       requesttopMovies();
+   }, []);
+   //We put the empty box bracket above because we want to execute the thing once
+  console.log({topMovies});
+
+  const [outdoormovies, setoutdoormovies] = useState([]);
+
+  useEffect(()=>{
+    const requestoutdoormovies = async () =>{
+       const getoutdoormovies = await axios.get("movie/upcoming");
+       setoutdoormovies(getoutdoormovies.data.results);
+    };
+    requestoutdoormovies();
+  }, []); //we put an empty array because we want to execute it only once
+
+  console.log({outdoormovies});
+
 
     return (
         <>
@@ -51,7 +76,7 @@ function HomePage(){
 
 <div  className="container mx-auto px-4 ">
     <PosterSlider
-    images={TempPosters}
+    images={topMovies}
     title="Online Streaming Events"
     isDark={false}
     />
@@ -60,7 +85,7 @@ function HomePage(){
 
 <div  className="container mx-auto px-4 ">
     <PosterSlider
-    images={TempPosters}
+    images={outdoormovies}
     title="Outdoor Events"
     isDark={false}
     />
