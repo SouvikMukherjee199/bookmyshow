@@ -15,7 +15,7 @@ import Navbar from "./components/Navbar/navbar.component.js";
 
 //axios default settings
 axios.defaults.baseURL = "https://api.themoviedb.org/3" ;
-axios.defaults.params= {} ; //letting browser knoww that I want an API parameter
+axios.defaults.params= {} ; //letting browser know that I want an API parameter
 axios.defaults.params["api_key"] = process.env.REACT_APP_API_KEY; 
  
 
