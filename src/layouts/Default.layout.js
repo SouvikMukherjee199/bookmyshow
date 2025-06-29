@@ -1,10 +1,10 @@
-import React from "react";
 import Temp from "../components/Temp";
-///components
+
 import Navbar from "../components/Navbar/navbar.component"
 import HeroCarousal from "../components/HeroCarousal/HeroCarousal.component";
 import HomePage from "../pages/Home.page";
-const DefaultLayout = (props) =>
+import Footer from "../components/Footer/Footer";
+const DefaultLayout = () =>
 {
     return (
  
@@ -13,6 +13,7 @@ const DefaultLayout = (props) =>
    <HeroCarousal/>
    <Temp/>
    <HomePage/>
+   <Footer/>
    
    </>
     );

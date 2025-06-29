@@ -1,9 +1,6 @@
-import  React from "react";
 
 
-//components
-import Navbar from "../components/Navbar/navbar.component";
-
+import Footer from "../components/Footer/Footer";
 import MovieNavbar from "../components/Navbar/movieNavbar.component";
 import Movie from "../pages/Movie.page";
 
@@ -13,6 +10,7 @@ return (
     <MovieNavbar/>
     {props.children}
     <Movie/>
+   <Footer/>
         
     </>
 );
